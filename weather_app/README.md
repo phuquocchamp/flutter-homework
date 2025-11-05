@@ -1,135 +1,90 @@
-#  Weather App - Flutter
+# Weather App
 
-Một ứng dụng thời tiết thông minh được xây dựng bằng Flutter, cho phép người dùng xem thông tin thời tiết theo vị trí GPS hiện tại hoặc tìm kiếm theo tên thành phố với tính năng autocomplete giống Google Maps.
+A smart Flutter weather application that allows users to view weather information based on their current GPS location or search by city name with intelligent autocomplete functionality.
 
-##  Chức năng chính
+## 🚀 Features
 
--  **Thời tiết theo GPS** - Tự động lấy thời tiết tại vị trí hiện tại
--  **Tìm kiếm thành phố** với autocomplete thông minh
--  **Dự báo 5 ngày** - Hiển thị thời tiết cho 5 ngày tới với cuộn ngang
--  **Hiển thị chi tiết** nhiệt độ, mô tả, tọa độ, thời gian cập nhật
--  **Làm mới** dữ liệu thời tiết real-time với nút reload
+- **GPS-Based Weather**: Automatically fetches weather data for the current location.
+- **City Search with Autocomplete**: Smart search functionality for cities, similar to Google Maps.
+- **5-Day Forecast**: Displays weather predictions for the next five days with a horizontal scroll.
+- **Detailed Weather Information**: Shows temperature, description, coordinates, and last updated time.
+- **Real-time Refresh**: Reload weather data with a dedicated refresh button.
+- **Environment Variables**: Secure API key management using `.env` files.
 
-##  Công nghệ & Kỹ thuật
+## 📁 Project Structure
 
-### **API Integration**
-- **OpenWeatherMap Current Weather API** - Real-time weather data
-- **OpenWeatherMap 5-day Forecast API** - Extended weather predictions  
-- **OpenWeatherMap Geocoding API** - Location search and coordinates
-
-### **Location Services**
-- **Geolocator** - GPS location access
-- **Location Permissions** - Runtime permission handling
-- **Position Tracking** - Latitude/longitude coordinates
-
-### **UI Components**
-- **Material Design** - Google's design system
-- **FutureBuilder** - Async data loading for weather and forecast
-- **TypeAheadField** - Autocomplete search input với gợi ý thông minh
-- **AppBar** - Navigation with reload action button
-- **Horizontal ScrollView** - 5-day forecast cards với swipe gesture
-- **Weather Icons** - Visual representation of weather conditions
-- **Loading States** - User feedback during API calls
-
-### **Architecture**
-- **Service-Model-View** pattern với clean separation
-- **Separation of Concerns** - Services, Models, Screens rõ ràng
-- **Environment Variables** - Secure API key management với .env
-- **State Management** - Efficient setState với Future-based loading
-- **Code Structure** - Professional organization without redundant comments
-
-##  Cài đặt và Chạy
-
-### **Yêu cầu hệ thống**
-- Flutter SDK (3.9.2 hoặc mới hơn)
-- Dart SDK  
-- Android Studio / VS Code với Flutter extension
-- Android Emulator hoặc thiết bị Android thật
-- Web browser (Chrome/Edge) cho web development
-- **OpenWeatherMap API Key** (miễn phí, đăng ký tại openweathermap.org)
-
-### **1. Clone repository**
-```bash
-git clone https://github.com/bichle04/weather-app-flutter.git
-cd weather_app
+```
+lib/
+├── main.dart                     # Entry point, dependency injection
+├── models/                       # Data models for weather and forecast
+├── services/                     # API integration and location services
+├── screens/                      # UI for current weather, forecast, and search
+└── widgets/                      # Reusable UI components (e.g., weather icons)
 ```
 
-### **2. Cài đặt dependencies**
-```bash
-flutter pub get
-```
+## 🛠️ Getting Started
 
-### **3. Cấu hình API Key**
+This project is a starting point for a Flutter application.
 
-#### **Lấy API Key miễn phí:**
-1. Truy cập [OpenWeatherMap API](https://openweathermap.org/api)
-2. Đăng ký tài khoản miễn phí
-3. Vào **API Keys** section trong dashboard
-4. Copy API key của bạn
+A few resources to get you started if this is your first Flutter project:
 
-#### **Thiết lập Environment:**
-```bash
-# Copy file template
-cp .env.example .env
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-# Mở file .env và thay thế:
-OPENWEATHER_API_KEY=your_actual_api_key_here
-```
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
 
+### Prerequisites
 
-### **4. Chạy ứng dụng**
+- Flutter SDK (3.9.2 or newer)
+- Dart SDK
+- Android Studio / VS Code with Flutter extension
+- **OpenWeatherMap API Key**: Obtain a free API key from [OpenWeatherMap](https://openweathermap.org/api).
 
-#### **Trên Android Emulator:**
-```bash
-# Khởi động emulator
-flutter emulators --launch <emulator_id>
+### Installation
 
-# Chạy app
+1. Clone this repository.
+2. Navigate to the project directory:
+   ```sh
+   cd weather_app
+   ```
+3. Install dependencies:
+   ```sh
+   flutter pub get
+   ```
+4. **Configure OpenWeatherMap API Key**:
+   - Copy the `.env.example` file to `.env`:
+     ```sh
+     cp .env.example .env
+     ```
+   - Open the newly created `.env` file and replace `YOUR_API_KEY_HERE` with your actual OpenWeatherMap API key:
+     ```
+     OPENWEATHER_API_KEY=your_actual_api_key_here
+     ```
+
+## 🏃 Usage
+
+To run the app, use the following command:
+```sh
 flutter run
 ```
 
-#### **Trên Web Browser:**
-```bash
-flutter run -d chrome
-```
+Once the app is running, you can:
+- Allow location permissions to see weather for your current location.
+- Use the search bar to find weather for other cities.
+- View the 5-day forecast by scrolling horizontally.
+- Tap the refresh button to get the latest weather data.
 
-#### **Trên Windows Desktop:**
-```bash
-# Cần bật Developer Mode trước
-# Run: start ms-settings:developers
-flutter run -d windows
-```
+## 🏗️ Built With
 
-#### **Build cho production:**
-```bash
-# Android APK
-flutter build apk
+- [Flutter](https://flutter.dev/) - UI toolkit
+- [Dart](https://dart.dev/) - Programming language
+- [geolocator](https://pub.dev/packages/geolocator) - For GPS location services
+- [http](https://pub.dev/packages/http) - For making HTTP requests to OpenWeatherMap API
+- [flutter_dotenv](https://pub.dev/packages/flutter_dotenv) - For managing environment variables (API key)
+- [flutter_typeahead](https://pub.dev/packages/flutter_typeahead) - For autocomplete search suggestions
 
-# Web
-flutter build web
+## 📝 License
 
-# iOS (trên macOS)
-flutter build ios
-```
-
-### **5. Development workflow**
-```bash
-# Chạy với hot reload
-flutter run
-
-# Trong terminal flutter run:
-# r - Hot reload
-# R - Hot restart  
-# q - Quit
-```
-
-##  Dependencies chính
-
-```yaml
-dependencies:
-  flutter: sdk
-  geolocator: ^13.0.1      # GPS location services
-  http: ^1.2.2             # HTTP client for API calls
-  flutter_dotenv: ^5.1.0   # Environment variables management  
-  flutter_typeahead: ^5.2.0 # Autocomplete search với suggestions
-```
+This project is open source and available under the MIT License.

@@ -1,113 +1,83 @@
 # Personal Profile App
 
-Ứng dụng hồ sơ cá nhân được xây dựng bằng Flutter 
+A Flutter application designed to display personal information, including a profile picture, personal details (name, title, bio), a list of skills with progress bars, social media links, and a Dark Mode/Light Mode toggle.
 
-## Mô tả dự án
+## 🚀 Features
 
-Personal Profile App là một ứng dụng hiển thị thông tin cá nhân, bao gồm:
-- Thông tin cá nhân (tên, chức danh, tiểu sử)
-- Ảnh đại diện
-- Danh sách kỹ năng với thanh tiến trình
-- Liên kết mạng xã hội
-- Chế độ Dark Mode / Light Mode
+- **Responsive UI**: The interface automatically adjusts to different screen sizes.
+- **Dark Mode Toggle**: Seamlessly switch between light and dark themes.
+- **Personal Information Display**: Showcases name, title, and a brief biography.
+- **Skills Section**: Displays a list of skills with visual progress indicators.
+- **Social Media Links**: Provides clickable links to social media profiles.
+- **State Management**: Utilizes Provider for efficient state management.
+- **Material Design 3**: Implements a modern UI with Material Design 3 principles.
 
-## Tính năng chính
-
-- **Responsive UI**: Giao diện tự động điều chỉnh theo kích thước màn hình
-- **Dark Mode Toggle**: Chuyển đổi giữa chế độ sáng và tối
-- **State Management**: Sử dụng Provider để quản lý state
-- **Material Design 3**: UI hiện đại với Material Design 3
-
-## Cấu trúc thư mục
+## 📁 Project Structure
 
 ```
 lib/
 ├── main.dart                           # Entry point, dependency injection
 ├── core/                               # Core functionality
-│   ├── constants/
-│   │   └── app_constants.dart          # App-wide constants
-│   └── theme/
-│       ├── app_theme.dart              # Theme configuration
-│       └── theme_provider.dart         # Theme state management
+│   ├── constants/                      # App-wide constants
+│   └── theme/                          # Theme configuration and state management
 └── features/
-    └── profile/                        # Profile feature
-        ├── data/                       # Data layer
-        │   ├── datasources/
-        │   │   └── profile_local_datasource.dart
-        │   ├── models/
-        │   │   ├── profile_model.dart
-        │   │   ├── skill_model.dart
-        │   │   └── social_link_model.dart
-        │   └── repositories/
-        │       └── profile_repository_impl.dart
-        ├── domain/                     # Domain layer (Business logic)
-        │   ├── entities/
-        │   │   ├── profile.dart
-        │   │   ├── skill.dart
-        │   │   └── social_link.dart
-        │   ├── repositories/
-        │   │   └── profile_repository.dart
-        │   └── usecases/
-        │       └── get_profile_usecase.dart
-        └── presentation/               # Presentation layer (UI)
-            ├── pages/
-            │   └── profile_page.dart
-            ├── providers/
-            │   └── profile_provider.dart
-            └── widgets/
-                ├── profile_header.dart
-                ├── skills_section.dart
-                ├── social_links_section.dart
-                └── theme_toggle_button.dart
+    └── profile/                        # Profile feature module
+        ├── data/                       # Data layer (datasources, models, repositories)
+        ├── domain/                     # Domain layer (entities, repositories, usecases)
+        └── presentation/               # Presentation layer (pages, providers, widgets)
 ```
 
-## Cài đặt và chạy
+## 🛠️ Getting Started
 
-### 1. Clone repository
+This project is a starting point for a Flutter application.
 
-```bash
-git clone <repository-url>
-cd lab1_profile_app
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
+
+### Prerequisites
+
+- Flutter SDK (3.9.2 or newer)
+- Dart SDK
+- Android Studio / VS Code with Flutter extension
+
+### Installation
+
+1. Clone this repository.
+2. Navigate to the project directory:
+   ```sh
+   cd profile_app
+   ```
+3. Install dependencies:
+   ```sh
+   flutter pub get
+   ```
+
+## 🏃 Usage
+
+To run the app, use the following command:
+```sh
+flutter run
 ```
 
-### 2. Cài đặt dependencies
+Once the app is running, you can:
+- View the personal profile information.
+- Toggle between Dark Mode and Light Mode using the dedicated button.
+- Click on social media icons to open the respective links.
 
-```bash
-flutter pub get
-```
+## 🏗️ Built With
 
-### 3. Chạy ứng dụng
+- [Flutter](https://flutter.dev/) - UI toolkit
+- [Dart](https://dart.dev/) - Programming language
+- [Provider](https://pub.dev/packages/provider) - State management
+- [url_launcher](https://pub.dev/packages/url_launcher) - For launching URLs (social links)
+- [equatable](https://pub.dev/packages/equatable) - For value equality in models
 
-#### Trên Android Emulator:
-```bash
-# Liệt kê devices
-flutter devices
+## 📝 License
 
-# Khởi động emulator
-flutter emulators --launch <emulator_name>
-
-# Chạy app
-flutter run -d <device_id>
-```
-
-#### Trên Windows Desktop:
-```bash
-flutter run -d windows
-```
-
-#### Trên Web:
-```bash
-flutter run -d chrome
-```
-
-### 4. Build release
-
-#### Android APK:
-```bash
-flutter build apk --release
-```
-
-#### Windows:
-```bash
-flutter build windows --release
-```
+This project is open source and available under the MIT License.

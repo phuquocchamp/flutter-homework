@@ -1,117 +1,77 @@
 # Todo App - Clean Architecture
 
-## Giới thiệu
+A Flutter Todo application built with Clean Architecture principles, allowing users to manage their task list with full offline storage capabilities.
 
-Đây là ứng dụng Todo App được xây dựng bằng Flutter. Ứng dụng cho phép quản lý danh sách công việc với khả năng lưu trữ offline hoàn toàn.
+## 🚀 Features
 
-## Mục tiêu
+- **Task Management**: Add new tasks with titles and descriptions, mark tasks as complete, and delete tasks with confirmation.
+- **Automatic Sorting**: Uncompleted tasks are automatically prioritized and displayed first.
+- **Statistics**: View total tasks, pending tasks, completed tasks, and completion percentage.
+- **Offline Storage**: All data is automatically saved to local storage using `shared_preferences`, ensuring data persistence without an internet connection.
+- **User Interface**: Modern UI with Material Design 3, automatic Dark Mode, responsive layout, and smooth animations.
+- **Clean Architecture**: Organized codebase following SOLID principles for maintainability and scalability.
 
-- Quản lý danh sách công việc đơn giản và hiệu quả
-- Áp dụng Clean Architecture để tổ chức code
-- Tuân thủ các nguyên tắc SOLID
-- Sử dụng Local State Management với setState()
-- Lưu trữ dữ liệu offline với SharedPreferences
-
-## Tính năng chính
-
-### 1. Quản lý công việc
-- Thêm công việc mới với tiêu đề và mô tả
-- Đánh dấu hoàn thành công việc
-- Xóa công việc với xác nhận
-- Sắp xếp tự động (công việc chưa hoàn thành trước)
-
-### 2. Thống kê
-- Tổng số công việc
-- Số công việc đang chờ
-- Số công việc đã hoàn thành
-- Tỷ lệ hoàn thành (%)
-
-### 3. Lưu trữ Offline
-- Tự động lưu trữ vào bộ nhớ local
-- Không cần kết nối internet
-- Dữ liệu được bảo toàn sau khi đóng app
-
-### 4. Giao diện người dùng
-- Material Design 3
-- Dark mode tự động
-- Responsive layout
-- Animations mượt mà
-
-## Kiến trúc Clean Architecture
-
-### Cấu trúc thư mục
+## 📁 Project Structure
 
 ```
 lib/
 ├── main.dart                     # Entry point
-├── core/                         # Shared utilities
-│   ├── constants/
-│   ├── theme/
-│   └── utils/
-├── domain/                       # Business logic
-│   ├── entities/
-│   ├── repositories/
-│   └── usecases/
-├── data/                         # Data layer
-│   ├── models/
-│   ├── datasources/
-│   └── repositories/
-└── presentation/                 # UI layer
-    ├── pages/
-    ├── widgets/
-    └── state/
+├── core/                         # Shared utilities (constants, theme, utils)
+├── domain/                       # Business logic (entities, repositories, usecases)
+├── data/                         # Data layer (models, datasources, repositories)
+└── presentation/                 # UI layer (pages, widgets, state)
 ```
 
+## 🛠️ Getting Started
 
+This project is a starting point for a Flutter application.
 
-## Cài đặt và Chạy
+A few resources to get you started if this is your first Flutter project:
 
-### Yêu cầu
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-- Flutter SDK >= 3.9.2
-- Dart SDK >= 3.9.2
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
 
-### Cài đặt dependencies
+### Prerequisites
 
-```bash
-flutter pub get
-```
+- Flutter SDK (3.9.2 or newer)
+- Dart SDK
+- Android Studio / VS Code with Flutter extension
 
-### Chạy ứng dụng
+### Installation
 
-```bash
-# Chạy trên device/emulator
+1. Clone this repository.
+2. Navigate to the project directory:
+   ```sh
+   cd todo_app
+   ```
+3. Install dependencies:
+   ```sh
+   flutter pub get
+   ```
+
+## 🏃 Usage
+
+To run the app, use the following command:
+```sh
 flutter run
-
-# Chạy trên Chrome
-flutter run -d chrome
-
-# Chạy trên Windows
-flutter run -d windows
 ```
 
-### Build
+Once the app is running, you can:
+- Add new tasks using the input field.
+- Mark tasks as complete by tapping on them.
+- Delete tasks by swiping or using a delete button.
+- View task statistics on the main screen.
 
-```bash
-# Build APK (Android)
-flutter build apk --release
+## 🏗️ Built With
 
-# Build App Bundle (Android)
-flutter build appbundle
+- [Flutter](https://flutter.dev/) - UI toolkit
+- [Dart](https://dart.dev/) - Programming language
+- [shared_preferences](https://pub.dev/packages/shared_preferences) - For local data storage
 
-# Build iOS
-flutter build ios --release
+## 📝 License
 
-# Build Windows
-flutter build windows --release
-```
-
-## Dependencies
-
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  cupertino_icons: ^1.0.8
-  shared_preferences: ^2.2.2
-```
+This project is open source and available under the MIT License.

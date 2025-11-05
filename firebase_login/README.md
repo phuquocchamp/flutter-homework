@@ -1,57 +1,90 @@
-# Project 10: Firebase Login App
+# Firebase Login App
 
-**Goal:** Integrate Firebase Authentication.
+A Flutter project that integrates Firebase Authentication to allow users to log in and register with email and password, and display user information.
 
-**Description:** Login/register with email & password and show user info.
+## 🚀 Features
 
-**Technical Requirements:**
+- **User Authentication**: Secure login and registration using email and password.
+- **Firebase Integration**: Utilizes Firebase Core and Firebase Auth for backend services.
+- **Auth State Management**: Uses `StreamBuilder` to reactively manage and display authentication states.
+- **User Information Display**: Shows relevant user details upon successful login.
 
-- `firebase_core`, `firebase_auth`
-- `StreamBuilder` for auth state
+## 📁 Project Structure
 
-**Outcome:** Firebase-based login app.
-
----
-
-## Terminal / Setup Instructions
-
-### 1️⃣ Tạo Firebase Project & bật Email/Password Authentication
-1. Truy cập [Firebase Console](https://console.firebase.google.com/).
-2. Click **Add project** → đặt tên project (ví dụ: `fir-login-app-flutter`) → tạo project.
-3. Vào **Authentication** → **Sign-in method** → bật **Email/Password**.
-
-### 2️⃣ Cài FlutterFire CLI
-```bash
-dart pub global activate flutterfire_cli
 ```
-Nếu terminal báo "flutterfire: command not found", thêm vào PATH:
-```bash
-export PATH="$PATH:$HOME/.pub-cache/bin"
+lib/
+  ├── main.dart          # Application entry point and Firebase initialization
+  ├── screens/           # UI for login, registration, and home screens
+  │   ├── login_screen.dart
+  │   ├── register_screen.dart
+  │   └── home_screen.dart
+  └── services/          # Authentication services (e.g., firebase_auth_service.dart)
 ```
-### 3️⃣ Cấu hình project Flutter với Firebase
-```bash
-cd <path-to-your-flutter-project>
-flutterfire configure --project=<your-firebase-project-id>
-```
-CLI sẽ tạo file lib/firebase_options.dart.
-### 4️⃣ Cài các dependency
-```bash
-flutter pub get
-```
-### 5️⃣ Chạy app Flutter
-```bash
+
+## 🛠️ Getting Started
+
+This project is a starting point for a Flutter application that demonstrates Firebase Authentication.
+
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
+
+### Prerequisites
+
+- Flutter SDK
+- Dart SDK
+- Any IDE with Flutter support (VS Code, Android Studio, etc.)
+- A Firebase Project configured with Email/Password Authentication enabled.
+
+### Installation
+
+1. Clone this repository.
+2. Navigate to the project directory:
+   ```sh
+   cd firebase_login
+   ```
+3. Install FlutterFire CLI (if not already installed):
+   ```bash
+   dart pub global activate flutterfire_cli
+   ```
+   If `flutterfire` command is not found, add it to your PATH:
+   ```bash
+   export PATH="$PATH:$HOME/.pub-cache/bin"
+   ```
+4. Configure your Flutter project with Firebase:
+   ```bash
+   flutterfire configure --project=<YOUR_FIREBASE_PROJECT_ID>
+   ```
+   (Replace `<YOUR_FIREBASE_PROJECT_ID>` with your actual Firebase project ID).
+   This will generate `lib/firebase_options.dart`.
+5. Install dependencies:
+   ```sh
+   flutter pub get
+   ```
+
+## 🏃 Usage
+
+To run the app, use the following command:
+```sh
 flutter run
 ```
 
-## Screenshots
+Upon launching the app, you will be presented with a login screen. You can:
+- **Register**: Create a new account using an email and password.
+- **Login**: Use existing credentials to access the home screen, which will display user information.
 
-| Login | Register |
-| ----- | -------- |
-| ![Login Screen](assets/65817a6f5633da6d8322.jpg) | ![Register Screen](assets/create-account.jpg) |
+## 🏗️ Built With
 
-| Home |
-| ----- |
-| ![Home Screen](assets/home.jpg) |
+- [Flutter](https://flutter.dev/) - UI toolkit
+- [Dart](https://dart.dev/) - Programming language
+- [Firebase Core](https://pub.dev/packages/firebase_core) - Firebase initialization
+- [Firebase Auth](https://pub.dev/packages/firebase_auth) - Firebase Authentication services
 
----
+## 📝 License
 
+This project is open source and available under the MIT License.
